@@ -12,7 +12,7 @@ def scan(ip):
     for element in answered_list:
         client_dict = {"ip": element[1].psrc, "mac": element[1].hwsrc}
         clients_list.append(client_dict)
-        
+
     return clients_list
 
 
@@ -24,8 +24,5 @@ def print_result(result_list):
         print('%s\t\t%s' % (client['ip'], client['mac']))
 
 
-scan_result = scan('143.237.100.0/24')
+scan_result = scan('10.10.100.0/24')
 print_result(scan_result)
-
-
-

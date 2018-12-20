@@ -10,16 +10,13 @@ def scan(ip):
 
     print('IP\t\t\tMAC Address')
     print('-'*40)
-        
+
     for element in answered_list:
         print(element[1].psrc + "\t\t" + element[1].hwsrc)
-    
+
     # print(answered_list.summary())
     # print(arp_broadcast.show())
     # print(arp_request.summary())
     # scapy.ls(scapy.ARP())
 
-scan('143.237.100.0/24')
-
-
-
+scan('10.10.100.0/24')
