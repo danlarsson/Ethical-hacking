@@ -2,6 +2,11 @@
 
 import scapy.all as scapy
 
+from configparser import ConfigParser
+parser = ConfigParser()
+parser.read('config.ini')
+network = str(parser.get('main', 'network'))
+
 def scan(ip):
     arp_request = scapy.ARP(pdst=ip)
     broadcast = scapy.Ether(dst='ff:ff:ff:ff:ff:ff')
@@ -23,6 +28,5 @@ def print_result(result_list):
     for client in result_list:
         print('%s\t\t%s' % (client['ip'], client['mac']))
 
-
-scan_result = scan('10.10.100.0/24')
+scan_result = scan(network)
 print_result(scan_result)

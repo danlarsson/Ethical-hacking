@@ -19,4 +19,4 @@ def scan(ip):
     # print(arp_request.summary())
     # scapy.ls(scapy.ARP())
 
-scan('10.10.100.0/24')
+scan('10.0.2.0/24')
