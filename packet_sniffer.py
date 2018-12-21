@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# HTTP login example site: http://www.geonames.org/login
+
 import scapy.all as scapy
 from scapy.layers import http
 
@@ -13,6 +15,7 @@ def sniff(interface):
 
 def process_sniffed_packet(packet):
 	if packet.haslayer(http.HTTPRequest):
-		print(packet)
+		if packet.haslayer(scapy.Raw):
+			print(packet[scapy.Raw].load)
 
 sniff(interface)
