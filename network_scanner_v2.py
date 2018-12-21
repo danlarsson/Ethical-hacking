@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 import scapy.all as scapy
-
 from configparser import ConfigParser
+
 parser = ConfigParser()
 parser.read('config.ini')
 network = str(parser.get('main', 'network'))
