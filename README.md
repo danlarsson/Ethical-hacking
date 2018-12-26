@@ -7,3 +7,6 @@ https://www.udemy.com/learn-python-and-ethical-hacking-from-scratch
 pip install scapy<br>
 pip install scapy_http<br>
 pip install configparser<br>
+
+apt install build-essential python-dev libnetfilter-queue-dev<br>
+pip install netfilterqueue<br>

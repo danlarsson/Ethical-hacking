@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 # Does a man in the middle attack.
 # echo 1 > /proc/sys/net/ipv4/ip_forward
